@@ -1,5 +1,5 @@
-import { useState } from 'react'       // useState lets us track the typed value
-import { Search } from 'lucide-react';
+import { useState } from 'react'
+import { Search } from 'lucide-react'
 
 function SearchInput({ size, color, strokeWidth }) {
 
@@ -13,24 +13,33 @@ function SearchInput({ size, color, strokeWidth }) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="search-box">
+        <form onSubmit={handleSubmit} className="w-full flex justify-center">
+
+            {/* The pill-shaped search box wrapper */}
+            <div className="flex items-center gap-3 bg-white rounded-full px-4 py-2 shadow-md border border-gray-200 max-w-xl w-full">
 
                 {/* Icon on the left */}
-                <Search size={size} color={color} strokeWidth={strokeWidth} />
+                <Search size={size} color={color} strokeWidth={strokeWidth} className="shrink-0 text-gray-400" />
 
-                {/* The text input — 'controlled' by React state */}
+                {/* The text input */}
                 <input
                     type="text"
-                    placeholder="Search business name, website or store..."
-                    value={query}                           // React controls the displayed value
-                    onChange={(e) => setQuery(e.target.value)}  // updates state on every keystroke
+                    placeholder="Search business name, or store name..."
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className="flex-1 outline-none bg-transparent text-gray-900 placeholder-gray-400 text-sm"
                 />
 
                 {/* Submit button */}
-                <button type="submit">Search</button>
+                <button
+                    type="submit"
+                    className="bg-[#0071e3] hover:bg-[#005bbf] text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-200 shrink-0"
+                >
+                    Check Now
+                </button>
 
             </div>
+
         </form>
     )
 }

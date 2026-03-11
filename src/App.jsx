@@ -1,10 +1,9 @@
-import './App.css'
-import MainSearch from './pages/Home'
+import Home from './pages/Home'
 
 function App() {
 
   return (
-    <MainSearch />
+    <Home />
   )
 }
 
