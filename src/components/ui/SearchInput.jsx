@@ -12,6 +12,10 @@ function SearchInput({ size, color, strokeWidth }) {
         console.log('Searching for:', query)  // we'll do something real here later
     }
 
+    function handleClick() {
+        alert('Button Clicked');
+    }
+
     return (
         <form onSubmit={handleSubmit} className="w-full flex justify-center">
 
@@ -34,6 +38,7 @@ function SearchInput({ size, color, strokeWidth }) {
                 <button
                     type="submit"
                     className="bg-[#0071e3] hover:bg-[#005bbf] text-white text-sm font-medium px-5 py-2 rounded-full transition-colors duration-200 shrink-0"
+                    onClick={handleClick}
                 >
                     Check Now
                 </button>
